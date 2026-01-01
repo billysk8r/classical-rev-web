@@ -1,0 +1,68 @@
+export default function AboutPage() {
+  return (
+    <div className="flex flex-col gap-10 md:gap-16 py-10 px-6 max-w-4xl mx-auto overflow-x-hidden transition-colors">
+      {/* Header Section */}
+      <section className="text-center space-y-4">
+        <h1 className="text-4xl md:text-6xl font-black uppercase italic underline decoration-red-600 underline-offset-8 text-zinc-900 dark:text-white">
+          The Story
+        </h1>
+        <p className="text-xl md:text-2xl font-bold italic text-zinc-800 dark:text-zinc-100">
+          "Chamber music is meant to be a conversation between friends."
+        </p>
+      </section>
+
+      {/* Main Content Section */}
+      <section className="grid grid-cols-1 gap-10">
+        <div className="prose dark:prose-invert max-w-none space-y-6">
+          <p className="text-base md:text-lg text-zinc-600 dark:text-zinc-400">
+            Founded in 2006 by violist{" "}
+            <strong className="text-zinc-900 dark:text-white font-bold">
+              Charith Premawardhana
+            </strong>
+            , Classical Revolution began as a weekly residency at the Revolution
+            Café in San Francisco’s Mission District. The goal was simple:
+            provide a place where musicians could perform chamber music in a
+            relaxed, social environment.
+          </p>
+
+          {/* Large Image Placeholder */}
+          <div className="w-full bg-zinc-100 dark:bg-zinc-900 aspect-video md:aspect-[21/9] flex items-center justify-center border-2 border-dashed border-zinc-300 dark:border-zinc-700 text-zinc-500 italic p-4 text-center">
+            [Image Placeholder: Charith and musicians performing at the original Revolution Café]
+          </div>
+
+          <p className="text-base md:text-lg text-zinc-600 dark:text-zinc-400">
+            What started as a local jam session quickly transformed into a
+            global movement. By breaking the "fourth wall" of the concert stage,
+            Classical Revolution has expanded to over 40 chapters worldwide,
+            bringing high-caliber music to neighborhood hangouts from New York
+            to Berlin.
+          </p>
+        </div>
+      </section>
+
+      {/* Global Impact Highlights */}
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-zinc-200 dark:border-zinc-800 pt-16 mb-10">
+        <div className="p-6 bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800">
+          <h3 className="text-xl font-bold uppercase tracking-tighter text-red-600 mb-2">
+            Our Mission
+          </h3>
+          <p className="text-sm text-zinc-600 dark:text-zinc-400">
+            To enrich the neighborhood environment by presenting chamber music
+            performances in accessible venues, and to provide support and
+            performance opportunities to local musicians.
+          </p>
+        </div>
+        <div className="p-6 bg-zinc-50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800">
+          <h3 className="text-xl font-bold uppercase tracking-tighter text-red-600 mb-2">
+            The Community
+          </h3>
+          <p className="text-sm text-zinc-600 dark:text-zinc-400">
+            From conservatory students to seasoned professionals, our network
+            thrives on the "Chamber Jam" format—spontaneous, high-energy
+            collaborations that invite the audience into the process.
+          </p>
+        </div>
+      </section>
+    </div>
+  );
+}
