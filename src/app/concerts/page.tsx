@@ -1,7 +1,15 @@
+import Link from "next/link";
+
 export default function ConcertsPage() {
   const upcomingEvents = [
-    { date: "Oct 24", venue: "The Revolution Café", city: "San Francisco", program: "Mozart & Brahms Jams" },
-    { date: "Nov 02", venue: "Public Records", city: "Brooklyn", program: "Contemporary Strings" },
+    { 
+      date: "Jan 27", 
+      time: "7:00 PM",
+      venue: "Napoleon Street Gallery", 
+      city: "San Francisco", 
+      program: "Mozart Birthday House Concert",
+      link: "https://www.eventbrite.com/e/1979273892493"
+    },
   ];
 
   return (
@@ -21,31 +29,36 @@ export default function ConcertsPage() {
         {upcomingEvents.map((event, i) => (
           <div 
             key={i} 
-            className="group border border-zinc-200 dark:border-zinc-800 p-6 hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-all flex justify-between items-center"
+            className="group border border-zinc-200 dark:border-zinc-800 p-6 hover:bg-zinc-50 dark:hover:bg-zinc-900 transition-all flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
           >
             <div>
-              <div className="text-red-600 font-bold tracking-widest uppercase text-sm">
-                {event.date}
+              {/* Date/Time Tag */}
+              <div className="text-red-600 font-bold tracking-widest uppercase text-sm mb-1">
+                {event.date} • {event.time}
               </div>
-              <h2 className="text-2xl font-bold text-zinc-900 dark:text-white">
-                {event.venue}
+
+              {/* Program Name (Emphasized) */}
+              <h2 className="text-2xl font-bold text-zinc-900 dark:text-white group-hover:text-red-600 transition-colors leading-tight">
+                {event.program}
               </h2>
-              <p className="text-zinc-600 dark:text-zinc-500">
-                {event.city} — {event.program}
+
+              {/* Venue and City (Secondary) */}
+              <p className="text-zinc-600 dark:text-zinc-500 font-medium">
+                {event.venue}, {event.city}
               </p>
             </div>
             
-            {/* Adaptive Button */}
-            <button className="hidden md:block border border-zinc-900 dark:border-white px-6 py-2 font-bold uppercase text-zinc-900 dark:text-white hover:bg-zinc-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all">
-              Details
-            </button>
+            {/* Action Button */}
+            <Link 
+              href={event.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full md:w-auto text-center border border-zinc-900 dark:border-white px-8 py-3 font-bold uppercase text-zinc-900 dark:text-white hover:bg-zinc-900 hover:text-white dark:hover:bg-white dark:hover:text-black transition-all"
+            >
+              Get Tickets
+            </Link>
           </div>
         ))}
-      </div>
-
-      {/* Map Placeholder */}
-      <div className="mt-10 p-8 border-2 border-dashed border-zinc-300 dark:border-zinc-800 text-center text-zinc-500 dark:text-zinc-600 bg-zinc-50 dark:bg-transparent">
-        [Dynamic Map Component Placeholder: Show all 40+ global chapters]
       </div>
     </div>
   );

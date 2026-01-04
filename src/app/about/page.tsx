@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function AboutPage() {
   return (
     <div className="flex flex-col gap-10 md:gap-16 py-10 px-6 max-w-4xl mx-auto overflow-x-hidden transition-colors">
@@ -15,7 +17,7 @@ export default function AboutPage() {
       <section className="grid grid-cols-1 gap-10">
         <div className="prose dark:prose-invert max-w-none space-y-6">
           <p className="text-base md:text-lg text-zinc-600 dark:text-zinc-400">
-            Founded in 2006 by violist{" "}
+            Founded in 2006 by {" "}
             <strong className="text-zinc-900 dark:text-white font-bold">
               Charith Premawardhana
             </strong>
@@ -25,9 +27,17 @@ export default function AboutPage() {
             relaxed, social environment.
           </p>
 
-          {/* Large Image Placeholder */}
-          <div className="w-full bg-zinc-100 dark:bg-zinc-900 aspect-video md:aspect-[21/9] flex items-center justify-center border-2 border-dashed border-zinc-300 dark:border-zinc-700 text-zinc-500 italic p-4 text-center">
-            [Image Placeholder: Charith and musicians performing at the original Revolution Café]
+          {/* About Image */}
+          <div className="relative w-full overflow-hidden border border-zinc-200 dark:border-zinc-800">
+            <Image
+              src="/charith.jpg"
+              alt="Charith and musicians performing at the original Revolution Café"
+              width={1200}
+              height={675}
+              className="w-full h-auto object-cover"
+              unoptimized
+              priority
+            />
           </div>
 
           <p className="text-base md:text-lg text-zinc-600 dark:text-zinc-400">
